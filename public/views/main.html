@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" selector="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4e9e3f37c1.js" crossorigin="anonymous"></script>
+
+    <title>TLC</title>
+</head>
+<style>
+    input.selectcambios {
+        width: 55px;
+    }
+
+    textarea,
+    input[type="text"] {
+        padding-left: 5px;
+    }
+</style>
+
+<body class="font-Monserrat bg-body"></body>
+<nav class=" w-full h-15 px-8 py-4 flex justify-between items-center bg-gradient-to-r from-primary to-primaryLight dark:bg-gray-800
+    dark:text-white">
+    <a href="#" class=""><img src="../img/logo.png" class="w-8 h-10" alt=""></i></a>
+    <div class="hidden lg:block text-footer ">
+        <a href="./main.html" class="font-semibold text-center text-lg pt-6 pr-3 hover:animate-pulse">Inicio</a>
+        <a href="./principal.html"
+            class="font-semibold text-center text-lg pt-6 pr-3 hover:animate-pulse">Calculadora</a>
+        <a href="./acercade.html" class="font-semibold text-center text-lg pt-6 pr-3 hover:animate-pulse">Acerca de</a>
+    </div>
+    <div class="lg:hidden flex justify-end items-center">
+        <a href="#" class="my-auto"><i class="fa-solid fa-bars fa-xl text-secondary"></i></a>
+    </div>
+</nav>
+<div class="w-full h-3 bg-secondary"></div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+    <div class="flex justify-between flex-wrap">
+        <div class="w-full sm:w-1/2 lg:w-[35%] max-h-96 mb-6 text-paragraph ">
+            <div class="container-card w-11/12  mx-auto mt-5 py-5" style="height: 500px;">
+                <div class="mx-auto w-64">
+                    <a href="./principal.html"><img class=" h-auto w-auto hover:animate-jump" src="../img/Card1.png"
+                            alt=""></a>
+
+                    <h5 class="text-lg font-bold text-center ">Teorema de limite central</h5>
+                    <p class="text-sm text-justify">La calculadora del teorema del límite central es una herramienta muy
+                        útil para los estudiantes de estadística y aquellos que trabajan en el campo de la
+                        investigación.</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-full sm:w-1/2 lg:w-[65%] mb-6">
+            <div class="container-card w-11/12 h-100 mx-auto mt-5 py-5 text-paragraph">
+                <div class="mx-14 w-auto">
+                    <h5 class="text-lg font-bold  text-center ">Encuentre la mejor solución para sus
+                        ejercicios de limite central.</h5>
+                    <br>
+                    <p class="text-sm text-justify">En este sitio encontrará recursos y herramientas que le ayudarán a
+                        resolver y comprender mejor sus ejercicios relacionados con el teorema del límite central.
+                        Nuestra calculadora del teorema del límite central ha sido diseñada específicamente para
+                        facilitar el aprendizaje y la aplicación de este importante concepto estadístico. Aquí podrá:
+                    </p>
+                    <br>
+                    <div class="flex max-w-7xl mx-auto  lg:flex-row">
+                        <div class="flex sm:w-1/2 lg:w-[60%] pr-5 text-paragraph flex-col">
+                            <h5 class="text-sm lg:text-sm pb-2 font-semibold ">Realizar Simulaciones de Muestras</h5>
+                            <p class="text-sm text-justify hidden lg:block py-3">
+                                Ejecute simulaciones de múltiples muestras a partir de las distribuciones creadas y
+                                observe los resultados
+                            </p>
+                            <h5 class="text-sm font-semibold pb-2">Visualizar Gráficamente los Resultados</h5>
+                            <p class="text-sm text-justify hidden lg:block py-3">
+                                Utilice gráficos interactivos para ver cómo las medias muestrales se aproximan a una
+                                distribución normal a medida que el tamaño de la muestra aumenta.
+                            </p>
+                            <h5 class=" text-sm font-semibold ">Analizar Estadísticamente las Muestras</h5>
+                            <p class="text-sm text-justify hidden lg:block py-3">
+                                Obtenga
+                                estadísticas
+                                descriptivas y análisis
+                                detallados de las muestras y sus medias para una comprensión más profunda.
+
+                            </p>
+                        </div>
+                        <div class=" sm:w-1/2 lg:w-[40%] mb-6 hover:animate-jump">
+                            <img src="../img/card2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="w-full h-16 bg-gray-50 fixed left-0 bottom-0 shadow-md text-gray-200 flex space-x-10 items-center justify-center lg:hidden dark:bg-gray-800"
+    id="tab_bar">
+    <a href="./main.html"><i class="fa fa-search" aria-hidden="true"></i></a>
+    <a href="./principal.html"><i class="fa-solid fa-search fa-xl text-primary"></i></a>
+    <a href="./acercade.html"><i class="fa-solid fa-heart fa-xl"></i></a>
+    <button id="toggle-sm">
+        <i class="fa-solid fa-moon fa-xl"></i>
+    </button>
+</div>
+<div class=" w-full bg-black h-32 ">
+    <footer class="bg-[#303135] text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between flex-wrap">
+                <div class="w-full sm:w-1/2 lg:w-[45%] mb-8">
+                    <h5 class="text-lg font-bold ">Acerca de</h5>
+                    <hr style=" width:25%;text-align:left;margin-left:0;border: 3px solid #800;">
+
+                    <br>
+                    <p class="text-sm text-justify text-footer">La Calculadora del Teorema del Límite Central es una
+                        herramienta
+                        educativa
+                        desarrollada por estudiantes de Ingeniería en Desarrollo de Software. Este proyecto surge en
+                        el marco de un curso avanzado de Estadística, con el objetivo de proporcionar a los usuarios
+                        una comprensión práctica y visual del Teorema del Límite Central (TLC), uno de los conceptos
+                        fundamentales en la teoría de la probabilidad y la estadística.</p>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+                    <h5 class="text-lg font-bold">Links usuales</h5>
+                    <hr style=" width:25%;text-align:left;margin-left:0;border: 3px solid #800;">
+                    <br>
+                    <ul class="text-sm text-links">
+                        <li><a href="#" class="hover:underline ">Calculadora de teorema del limite central</a></li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+                    <h5 class="text-lg font-bold ">Legal</h5>
+                    <hr style=" width:25%;text-align:left;margin-left:0;border: 3px solid #800;">
+                    <br>
+                    <ul class="text-sm text-links flex flex-col gap-3">
+                        <li><a href="#" class="hover:underline">Legal</a></li>
+                        <li><a href="#" class="hover:underline">Privacidad</a></li>
+                        <li><a href="#" class="hover:underline">Politica de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

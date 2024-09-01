@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" selector="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <title>TLC</title>
+</head>
+<style>
+    input.selectcambios {
+        width: 55px;
+    }
+
+    textarea,
+    input[type="text"] {
+        padding-left: 5px;
+    }
+</style>
+
+<body class="font-Monserrat bg-body"></body>
+<nav class=" w-full h-15 px-8 py-4 flex justify-between items-center bg-gradient-to-r from-primary to-primaryLight dark:bg-gray-800
+    dark:text-white">
+    <a href="#" class=""><img src="../img/logo.png" class="w-8 h-10" alt=""></i></a>
+    <div class="hidden lg:block text-footer ">
+        <a href="./main.html" class="font-semibold text-center text-lg pt-6 pr-3 hover:animate-pulse">Inicio</a>
+        <a href="./principal.html"
+            class="font-semibold text-center text-lg pt-6 pr-3 hover:animate-pulse">Calculadora</a>
+        <a href="./acercade.html" class="font-semibold text-center text-lg pt-6 pr-3 hover:animate-pulse">Acerca de</a>
+    </div>
+    <div class="lg:hidden flex justify-end items-center">
+        <a href="#" class="my-auto"><i class="fa-solid fa-bars fa-xl text-secondary"></i></a>
+    </div>
+</nav>
+<div class="w-full h-3 bg-secondary"></div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-5">
+    <div class="flex justify-between">
+        <div class="w-full container-card flex-col flex sm:w-1/2 lg:flex-row lg:w-[100%] mb-6">
+            <div class=" w-11/12 h-100 mx-auto mt-5 px-10 text-paragraph">
+                <br>
+                <h5 class="text-lg font-bold ">Descripción del Proyecto:</h5>
+                <p class="text-sm text-justify">La Calculadora del Teorema del Límite Central es una herramienta
+                    educativa desarrollada por estudiantes de Ingeniería en Desarrollo de Software. Este proyecto surge
+                    en el marco de un curso avanzado de Estadística, con el objetivo de proporcionar a los usuarios una
+                    comprensión práctica y visual del Teorema del Límite Central (TLC), uno de los conceptos
+                    fundamentales en la teoría de la probabilidad y la estadística.</p>
+                <br>
+                <h5 class="text-lg font-bold  ">Objetivo Principal:</h5>
+                <p class="text-sm text-justify">El propósito de la calculadora es permitir a los estudiantes y
+                    profesionales en estadística simular y visualizar cómo las distribuciones de muestras aleatorias se
+                    aproximan a una distribución normal a medida que el tamaño de la muestra aumenta, independientemente
+                    de la distribución original de los datos. Esto facilita una mejor comprensión del comportamiento de
+                    las medias muestrales y refuerza los conceptos teóricos mediante una herramienta interactiva.</p>
+                <br>
+                <h5 class="text-lg font-bold  ">Funcionalidades Destacadas:</h5>
+                <p class="text-sm text-justify">Generación de Distribuciones: Permite a los usuarios generar
+                    distribuciones de datos con diferentes parámetros y tamaños de muestra.
+                    Simulación de Muestras: Realiza simulaciones de múltiples muestras a partir de las distribuciones
+                    generadas.
+                    Visualización Gráfica: Ofrece gráficos interactivos que muestran cómo las medias muestrales se
+                    distribuyen y cómo se ajustan a una distribución normal.
+                    Análisis Estadístico: Proporciona estadísticas descriptivas y análisis detallados de las muestras y
+                    sus medias.</p>
+
+                <br>
+
+            </div>
+            <div class="w-11/12 h-100 mx-auto mt-5 px-10 text-paragraph">
+                <br>
+                <h5 class="text-lg font-bold  ">Tecnologías Utilizadas:</h5>
+                <p class="text-sm text-justify">Lenguajes de Programación: PHP y JavaScript</p>
+                <p class="text-sm">Bibliotecas y Frameworks: ChartJS, Laravel</p>
+                <p class="text-sm text-justify">Interfaz de Usuario: Desarrollada con HTML5, CSS3 y frameworks de
+                    frontend como Tailwind.</p>
+                <br>
+                <p class="text-sm text-justify">Equipo de Desarrollo:</p>
+
+                <p class="text-sm text-justify">El proyecto fue llevado a cabo por un Rodrigo Enriquez Ortiz Diaz,
+                    Marlon Isaac Hernandez García y Erika Angelica Chavez Turcios, que combinó habilidades en
+                    programación, análisis de datos y diseño de interfaces de usuario. El equipo trabajó en estrecha
+                    colaboración con profesores del departamento de estadística para asegurar la precisión y relevancia
+                    del contenido educativo.</p>
+                <br>
+                <h5 class="text-lg font-bold  ">Impacto Educativo:</h5>
+                <p class="text-sm text-justify">La Calculadora del Teorema del Límite Central no solo sirve como una
+                    herramienta de aprendizaje para los propios desarrolladores, sino que también se ha diseñado para
+                    ser utilizada por otros estudiantes y profesores en cursos de estadística y probabilidad. La
+                    herramienta facilita una enseñanza más dinámica e interactiva, promoviendo un entendimiento más
+                    profundo de los conceptos estadísticos mediante la experimentación y la visualización.</p>
+                <br>
+                <h5 class="text-lg font-bold text-justify ">Conclusión:</h5>
+                <p class="text-sm text-justify">La Calculadora del Teorema del Límite Central es un claro ejemplo de
+                    cómo los estudiantes de Ingeniería en Desarrollo de Software pueden aplicar sus habilidades técnicas
+                    para crear herramientas útiles y educativas. Este proyecto no solo cumple con los objetivos
+                    académicos del curso, sino que también contribuye al campo de la educación estadística, facilitando
+                    el aprendizaje y la comprensión de conceptos complejos de manera interactiva y práctica.</p>
+                <br>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class=" w-full bg-black h-32 ">
+    <footer class="bg-[#303135] text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between flex-wrap">
+                <div class="w-full sm:w-1/2 lg:w-[45%] mb-8">
+                    <h5 class="text-lg font-bold ">Acerca de</h5>
+                    <hr style=" width:25%;text-align:left;margin-left:0;border: 3px solid #800;">
+
+                    <br>
+                    <p class="text-sm text-justify text-footer">La Calculadora del Teorema del Límite Central es una
+                        herramienta
+                        educativa
+                        desarrollada por estudiantes de Ingeniería en Desarrollo de Software. Este proyecto surge en
+                        el marco de un curso avanzado de Estadística, con el objetivo de proporcionar a los usuarios
+                        una comprensión práctica y visual del Teorema del Límite Central (TLC), uno de los conceptos
+                        fundamentales en la teoría de la probabilidad y la estadística.</p>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+                    <h5 class="text-lg font-bold">Links usuales</h5>
+                    <hr style=" width:25%;text-align:left;margin-left:0;border: 3px solid #800;">
+                    <br>
+                    <ul class="text-sm text-links">
+                        <li><a href="#" class="hover:underline ">Calculadora de teorema del limite central</a></li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+                    <h5 class="text-lg font-bold ">Legal</h5>
+                    <hr style=" width:25%;text-align:left;margin-left:0;border: 3px solid #800;">
+                    <br>
+                    <ul class="text-sm text-links flex flex-col gap-3">
+                        <li><a href="#" class="hover:underline">Legal</a></li>
+                        <li><a href="#" class="hover:underline">Privacidad</a></li>
+                        <li><a href="#" class="hover:underline">Politica de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

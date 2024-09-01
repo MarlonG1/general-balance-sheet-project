@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" selector="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <title>TLC</title>
+</head>
+<style>
+    input.selectcambios {
+        width: 55px;
+    }
+
+    textarea,
+    input[type="text"] {
+        padding-left: 5px;
+    }
+</style>
+
+<body class="font-Monserrat bg-body"></body>
+<nav class=" w-full h-15 px-8 py-4 flex justify-between items-center bg-gradient-to-r from-primary to-primaryLight dark:bg-gray-800
+    dark:text-white">
+    <a href="#" class=""><img src="../img/logo.png" class="w-8 h-10" alt=""></i></a>
+    <div class="hidden lg:block text-footer ">
+        <a href="./main.html" class="font-semibold text-center text-lg pt-6 pr-3 hover:animate-pulse">Inicio</a>
+        <a href="./principal.html"
+            class="font-semibold text-center text-lg pt-6 pr-3 hover:animate-pulse">Calculadora</a>
+        <a href="./acercade.html" class="font-semibold text-center text-lg pt-6 pr-3 hover:animate-pulse">Acerca de</a>
+    </div>
+    <div class="lg:hidden flex justify-end items-center">
+        <a href="#" class="my-auto"><i class="fa-solid fa-bars fa-xl text-secondary"></i></a>
+    </div>
+</nav>
+<div class="w-full h-3 bg-secondary"></div>
+
+
+<div class="py-5 grid md:grid-cols-3 gap-4 w-11/12 mx-auto ">
+    <div class="container-card md:col-span-3 pb-[2rem] animate-fade animate-once">
+        <h1 class="font-semibold text-center text-lg pt-6">Datos muestrales</h1>
+        <div class="flex items-center mx-auto justify-center rounded-lg pb-4 pt-3">
+            <div class="flex flex-col gap-1 items-center lg:gap-2  lg:flex-row ">
+                <h1 class="input-small">Cantidad de muestras: </h1>
+                <div class="flex">
+                    <div
+                        class="w-48 drop-shadow-lg py-0.5 rounded-l-lg border-solid border-2 border-primary bg-white animate-pulse animate-thrice">
+                        <input type="search" class="w-[98%] mx-1 px-4 py-1 text-paragraph focus:outline-none"
+                            id="totalMuestra" placeholder="Ingrese la cantidad">
+                    </div>
+                    <div>
+                        <button type="submit" onclick="cantidadMuestras(document.getElementById('totalMuestra').value)"
+                            class="flex items-center drop-shadow-lg bg-primaryLight justify-center w-8 h-10 text-white rounded-r-lg animate-pulse animate-twice">
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="muestrasContainer" class="text-primary grid grid-cols-1 lg:grid-cols-3
+            gap-4 place-items-center">
+
+
+        </div>
+
+    </div>
+
+    <div class="container-card py-[1rem] animate-fade animate-once">
+        <form action="javascript:;" id="actionForm">
+            <div class="mx-auto w-10/12">
+                <small class="input-small"><i class="fa-solid fa-comment"></i>Pregunta de investigación</small>
+                <textarea required id="pregunta" rows="3" class="input-classes p-2 animate-fade-down"
+                    placeholder="Ingrese la pregunta de investigacion"></textarea>
+            </div>
+            <div class="mx-auto w-10/12 flex justify-center items-center pt-5">
+                <h1 class="font-semibold text-center text-sm text-tertiary py-5 pr-2">La muestra:</h1>
+                <select id="valorXoption" onchange="selectCambiar(this.value)"
+                    class="animate-flip-down  block w-44 h-8 rounded-md bg-white border-0 text-center text-inputPlaceholder Capitalize shadow-sm ring-2 ring-inset ring-primary focus:ring-2 focus:ring-inset focus:ring-secondary sm:max-w-xs sm:text-sm sm:leading-6">
+                    <option value="1">Está en el rango</option>
+                    <option value="2">Es menor que</option>
+                    <option value="3">Es mayor que</option>
+                </select>
+            </div>
+            <div class="flex items-center justify-center py-5">
+                <input required type="text" placeholder="  #"
+                    class="input-general selectcambios jone text-center animate-fade-down">
+                <p class="mx-4 selectcambiosp selectcambios">y</p>
+                <input required type="text" placeholder="  #"
+                    class="input-general selectcambios otro text-center animate-fade-down">
+            </div>
+            <div class="flex mx-3 gap-x-1 pt-5 justify-center">
+
+                <button id="reporte"
+                    class="rounded-md bg-primaryLight px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary hover:animate-jump focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"><i
+                        class="fa-solid fa-file-lines"></i> Reporte</button>
+                <button onclick="getMuestraData(true)" class="rounded-md bg-primaryLight px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"><i class="fa-solid fa-square-root-variable"></i> Paso a paso</button>
+                <button onclick="getMuestraData()"
+                    class="rounded-md bg-primaryLight px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary hover:animate-jump focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"><i
+                        class="fa-solid fa-calculator"></i> Calcular</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container-card md:col-span-2 py-5 md:flex">
+        <div class="w-8/12 h-80 flex justify-center items-center">
+            <div class="w-100" id="grafica"></div>
+        </div>
+        <div class="flex flex-col justify-center animate-fade animate-once">
+            <h1 class="text-tertiary font-bold text-center">Vista de la gráfica resultante:</h1>
+            <div class="mx-auto text-paragraph pt-4">
+                <div class="flex items-center mb-2">
+                    <input type="radio" name="chart-type" id="combined-charts" class="form-radio chart-button" data-chart="both" style="accent-color: #7F2323; --tw-ring-color: #7F2323;" checked>
+                    <label for="combined-charts" class="ml-2">Gráficas combinadas</label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input type="radio" name="chart-type" id="vertical-bars" class="form-radio chart-button" data-chart="bars" style="accent-color: #7F2323; --tw-ring-color: #7F2323;">
+                    <label for="vertical-bars" class="ml-2">Gráfica de barras verticales</label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input type="radio" name="chart-type" id="gaussian-curve" class="form-radio chart-button" data-chart="gaussian" style="accent-color: #7F2323; --tw-ring-color: #7F2323;">
+                    <label for="gaussian-curve" class="ml-2">Gráfica de campana de Gauss</label>
+                </div>
+            </div>
+            <div class="pt-5">
+                <h1 class="text-tertiary font-bold text-center">Resultado:</h1>
+                <div class="ml-4 flex justify-center">
+                    <div class="mx-auto font-semibold text-title">
+                        <p id="mediaPoblacional">μ: <b></b></p>
+                        <p id="desviacionEstandarPoblacional">σ: <b></b></p>
+                        <p id="desviacionEstandarDeLaMedia">σₓ: <b></b></p>
+                        <p id="valorZ">Z: <b></b></p>
+                    </div>
+                </div>
+                <!-- Button -->
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="py-4  mx-4">
+    <div class="container-card mx-4 px-4 py-4" id="pasoapasocontainer">
+    </div>
+</div>
+
+<div class=" w-full bg-black h-32 ">
+    <footer class="bg-[#303135] text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between flex-wrap">
+                <div class="w-full sm:w-1/2 lg:w-[45%] mb-8">
+                    <h5 class="text-lg font-bold ">Acerca de</h5>
+                    <hr style=" width:25%;text-align:left;margin-left:0;border: 3px solid #800;">
+
+                    <br>
+                    <p class="text-sm text-justify text-footer">La Calculadora del Teorema del Límite Central es una
+                        herramienta
+                        educativa
+                        desarrollada por estudiantes de Ingeniería en Desarrollo de Software. Este proyecto surge en
+                        el marco de un curso avanzado de Estadística, con el objetivo de proporcionar a los usuarios
+                        una comprensión práctica y visual del Teorema del Límite Central (TLC), uno de los conceptos
+                        fundamentales en la teoría de la probabilidad y la estadística.</p>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+                    <h5 class="text-lg font-bold">Links usuales</h5>
+                    <hr style=" width:25%;text-align:left;margin-left:0;border: 3px solid #800;">
+                    <br>
+                    <ul class="text-sm text-links">
+                        <li><a href="#" class="hover:underline ">Calculadora de teorema del limite central</a></li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+                    <h5 class="text-lg font-bold ">Legal</h5>
+                    <hr style=" width:25%;text-align:left;margin-left:0;border: 3px solid #800;">
+                    <br>
+                    <ul class="text-sm text-links flex flex-col gap-3">
+                        <li><a href="#" class="hover:underline">Legal</a></li>
+                        <li><a href="#" class="hover:underline">Privacidad</a></li>
+                        <li><a href="#" class="hover:underline">Politica de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://kit.fontawesome.com/4e9e3f37c1.js"></script>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/gpt.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</body>
+
+</html>
