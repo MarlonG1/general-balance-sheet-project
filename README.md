@@ -14,6 +14,12 @@ This web application is designed to calculate and present a comprehensive balanc
 
 Additionally, the application generates an in-depth investigation report using the OpenAI API, specifically leveraging Chat-GPT3 Turbo to produce insightful analyses and summaries based on the balance sheet data.
 
+## Stack
+
+- Charts: **D3js**
+- OpenAI model: **GPT-3.5 Turbo**
+- Frontend styles: **Tailwind CSS**
+
 ## Screenshots ##
 
 <img src='https://i.imgur.com/GUgk9Yx.png'>
